@@ -1,7 +1,7 @@
 {
   "name": "html-wrapper-",
-  "displayName": "html wrapper ",
-  "description": "",
+  "displayName": "HTML Wrapper",
+  "description": "An extension to wrap selected text with an HTML tag.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"
@@ -9,13 +9,22 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:html-wrapper.wrapper"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "html-wrapper-.wrapper",
-        "title": "wrapper"
+        "command": "html-wrapper.wrapper",
+        "title": "Wrap HTML with Tag"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "html-wrapper.wrapper",
+        "key": "ctrl+1",
+        "when": "editorTextFocus"
       }
     ]
   },
@@ -28,14 +37,15 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.87.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
+    "@types/vscode": "^1.87.0",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
     "@vscode/test-cli": "^0.0.6",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
   }
+
 }
