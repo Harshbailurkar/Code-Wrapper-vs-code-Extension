@@ -1,71 +1,47 @@
-# html-wrapper- README
+# Wrapper HTML
+[Install from here ](https://marketplace.visualstudio.com/items?itemName=Spikey.wrapper-html)
 
-This is the README for your extension "html-wrapper-". After writing up a brief description, we recommend including the following sections.
+## Developed By
+- [Avishkar Mahalingpure](https://github.com/Spikree)
+- [Harsh Bailurkar](https://github.com/Harshbailurkar)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The Wrapper HTML extension allows you to effortlessly wrap your HTML code with any common HTML wrapping tags like `<div>`, `<section>`, `<article>`, and more. No more manually searching for ending tags—this extension takes care of it for you!
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1. Select the HTML code you want to wrap.
+2. Trigger the extension by using the default keyboard shortcut `Ctrl+1` or through the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS) by typing `Wrap HTML Element`.
+3. Choose your desired wrapping tag from the quick pick list.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+If the default keybinding conflicts with another extension, you can customize it by adding the following to your `keybindings.json` file:
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+```json
+[
+    {
+        "key": "ctrl+1", // your_custom_key
+        "command": "html-wrapper-.wrapper",
+        "when": "editorTextFocus"
+    }
+]
+```
+### Known Issues
+Currently, the extension fully supports wrapping elements with a range of block-level tags. Future updates will include enhanced support for additional tags.
 
 ## Release Notes
+### v2.0.0
+- Full support for wrapping selected elements with a variety of HTML tags.
+- Automatic identification of closing tags.
 
-Users appreciate release notes as you update your extension.
+## Installation
+Open Visual Studio Code.
+In the Extension Store search wrapper html. or download it from here https://marketplace.visualstudio.com/items?itemName=Spikey.wrapper-html
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+if the keys are conflicting then change them as given below: 
+Go to the "View" menu and select "Command Palette" (or use the shortcut Ctrl+Shift+P or Cmd+Shift+P on macOS).
+Type "Preferences: Open Keyboard Shortcuts (JSON)" and select it from the dropdown.
+In the keybindings.json file, add your custom key binding as shown above.
+Enjoy your streamlined HTML wrapping experience!
